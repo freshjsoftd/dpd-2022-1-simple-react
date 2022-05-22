@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+
+		<title>Hello React!</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+
+		<script src="https://unpkg.com/react@^18/umd/react.production.min.js"></script>
+		<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+
+	<body>
+		<div id="root"></div>
+
+		<script type="text/babel">
+			// React code will go here
+      function MyApp(props){
+        console.log({name});
+        return (
+          <>
+							<h1>Hello {props.name} {props.lastName}</h1>
+							<Greeter name='John' lastName='Doe' />
+						</>
+        )
+      }
+			class Greeter extends React.Component {
+				render() {
+					console.log(this.props.name);
+					return (
+						<>
+							<h1>Hello {this.props.name} {this.props.lastName}</h1>
+							
+						</>
+					);
+				}
+			}
+			const container = document.getElementById('root');
+			const root = ReactDOM.createRoot(container);
+			// root.render(<h1>Hello React! JSX</h1>)
+			// root.render(<Greeter name='John' lastName='Doe' />);
+			root.render(<MyApp name='Jane' lastName='Smith'/>);
+		</script>
+	</body>
+</html>
